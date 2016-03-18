@@ -1,0 +1,11 @@
+***create table, found in server/app.js***
+CREATE TABLE IF NOT EXISTS animals ('
+                        + 'id SERIAL PRIMARY KEY,'
+                        + 'type varchar(250),'
+                        + 'number int);
+
+***insert info into new row***
+INSERT INTO animals (type, number) VALUES ($1, $2) RETURNING id, type, number
+
+***select things to display***
+SELECT * FROM animals
